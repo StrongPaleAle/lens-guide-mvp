@@ -38,6 +38,7 @@ const props = defineProps({
       @apply 
           relative 
           w-full 
+          h-full
           max-w-screen-2xl
           mx-auto 
           overflow-hidden
@@ -48,7 +49,8 @@ const props = defineProps({
             w-full
             bg-white 
             rounded-xlg
-            mt-0.5;
+            mt-0.5
+            h-full;
             
     }
     &__close-button{
