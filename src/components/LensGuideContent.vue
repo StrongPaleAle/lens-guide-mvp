@@ -70,11 +70,24 @@ const ProductSceneLenses = computed(() => {
     }
     &__modal-body{
         @apply
-            lg:basis-2/5
+            px-6
+            py-12
+            lg:basis-2/5;
+        select{
+            @apply
+                px-2
+                py-1.5
+                border
+                border-black
+                rounded-md
+                form-select;
+        }
     }
     &__scene{
         @apply
-            lg:basis-3/5;
+            lg:basis-3/5
+            h-full;
+
         &-container{
             @apply
                 h-full

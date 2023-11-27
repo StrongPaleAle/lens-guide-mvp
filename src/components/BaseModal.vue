@@ -6,7 +6,7 @@ const props = defineProps({
 
 <template>
   <Transition name="BaseModal">
-    <div v-if="show" class="BaseModal">
+    <div v-if="show" class="BaseModal" tabindex="-1">
       <div class="BaseModal__container">
         
 
@@ -49,7 +49,7 @@ const props = defineProps({
             w-full
             bg-white 
             rounded-xlg
-            mt-0.5
+            overflow-hidden
             h-full;
             
     }

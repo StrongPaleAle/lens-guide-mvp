@@ -73,16 +73,28 @@ const model = computed({
                     h-full
                     object-cover;
             }
-            & input[type="radio"]{
-                @apply
-                    sr-only;
-                &:checked + .active-indicator{
+            .active-indicator{
+                background: linear-gradient(73deg, #5C0F99 -1.94%, #3449B8 58.96%, #1799E1 102.64%);
                     @apply
                         absolute
                         inset-0
                         grid
                         place-items-center
                         text-white
+                        opacity-0
+                        transition-opacity
+                        ease-in-out
+                        duration-300;
+            }
+            & input[type="radio"]{
+                @apply
+                    sr-only;
+                &:checked + .active-indicator{
+                    @apply
+                        opacity-70
+                        transition-opacity
+                        ease-in-out
+                        duration-300;
                 }
             }
         }

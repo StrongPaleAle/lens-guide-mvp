@@ -19,3 +19,19 @@ const handleInputChange = (event: Event) => {
         @input="$emit('update:lensRangeValue', handleInputChange($event))" 
         class="LensGuide__range">
 </template>
+<style scoped>
+.LensGuide{
+    &__range{
+        @apply
+            absolute
+            bottom-0
+            left-0
+            w-full
+            h-full
+            opacity-0
+            cursor-grab
+            active:cursor-grabbing;
+        
+    }
+}
+</style>

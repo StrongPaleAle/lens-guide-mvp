@@ -19,4 +19,18 @@ const showModal = ref(false)
         </BaseModal>
     </Teleport>
 </template>
-
+<style scoped>
+.LensGuide{
+    &__show-btn{
+        @apply
+            
+            text-lg
+            leading-tight
+            pb-1.5
+            border-b
+            border-black
+            border-opacity-30
+            cursor-pointer;
+    }
+}
+</style>
