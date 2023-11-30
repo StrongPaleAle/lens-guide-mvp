@@ -4,10 +4,11 @@ import { useProductStore } from '@/stores/ProductStore';
 
 import LensGuideScenePicker from '@/components/LensGuideScenePicker.vue';
 import LensGuideSceneImages from '@/components/LensGuideSceneImages.vue';
+import BaseColourSwatch from '@/components/BaseColourSwatch.vue'
 
 const productStore = useProductStore()
 
-const lensModelValue = ref(Object.keys(productStore.selectedScene?.sceneImages)[0])
+
 
 const ProductSceneLenses = computed(() => {
     const lenses = []
@@ -23,18 +24,18 @@ const ProductSceneLenses = computed(() => {
     }
     return lenses
 })
+const SlicedSceneLenses = computed(() => {
+    return ProductSceneLenses.value.slice(0,8)
+})
+const lensModelValue = ref(SlicedSceneLenses.value[0].sku)
 
-// function lesnsesNameBySku(sku: string) { 
-//     return ProductSceneLenses.value.find(lens => lens.sku === sku)?.name
-    
-// }
 
 </script>
 <template>
   <div class="LensGuide__modal">
     <div class="LensGuide__modal-body">
         
-        <select v-model="lensModelValue" name="lensSelect">
+        <!-- <select v-model="lensModelValue" name="lensSelect">
             <option 
                 v-for="lens in ProductSceneLenses" 
                 :key="lens.sku" 
@@ -42,7 +43,12 @@ const ProductSceneLenses = computed(() => {
             >
                 {{ lens.name }}
             </option>
-        </select>
+        </select> -->
+        <BaseColourSwatch  
+            :inputGroup="SlicedSceneLenses" 
+            :modelValue="lensModelValue"
+            @update:model-value="lensModelValue = $event"
+        />
     </div>
     <div class="LensGuide__scene">
         <div class="LensGuide__scene-container">
